@@ -3,6 +3,30 @@ import deepl
 import os
 from dotenv import load_dotenv
 
+# (선택) 페이지 기본 설정
+st.set_page_config(
+    page_title="JEEHOLAB Prompt Sync",
+    page_icon="🧠",
+    layout="wide"
+)
+
+# 💡 CSS는 set_page_config 다음에!
+st.markdown(
+    """
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+    <span style="font-size: 28px; font-weight: 700; color: #2c3e50;">🧠 JEEHOLAB</span>
+    </div>
+    <style>
+    .stTextArea textarea {
+        width: 100% !important;
+        min-height: 400px;
+        font-size: 16px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 load_dotenv()
 DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
 
